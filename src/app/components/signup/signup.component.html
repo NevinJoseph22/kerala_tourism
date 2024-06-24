@@ -1,0 +1,77 @@
+<div class="body">
+  <div class="signup_form">
+    <form #signupform="ngForm" (ngSubmit)="signup(signupform)">
+      <h3>Registration Form</h3>
+
+      <div class="input_box">
+        <label for="fullname">Full Name</label>
+        <input type="text" id="fullname" placeholder="Enter full name" name="fullname" ngModel required />
+        <div *ngIf="signupform.controls['fullname']?.invalid && (signupform.controls['fullname']?.dirty || signupform.controls['fullname']?.touched)" class="error-message">
+          Full name is required.
+        </div>
+      </div>
+
+      <div class="input_box">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" placeholder="Enter email address" name="email" ngModel required email />
+        <div *ngIf="signupform.controls['email']?.invalid && (signupform.controls['email']?.dirty || signupform.controls['email']?.touched)">
+          <div *ngIf="signupform.controls['email']?.errors?.['required']" class="error-message">Email is required.</div>
+          <div *ngIf="signupform.controls['email']?.errors?.['email']" class="error-message">Invalid email format.</div>
+        </div>
+      </div>
+
+      <div class="input_box">
+        <label for="password">Password</label>
+        <input type="password" id="password" placeholder="Enter Password" name="password" ngModel required />
+        <div *ngIf="signupform.controls['password']?.invalid && (signupform.controls['password']?.dirty || signupform.controls['password']?.touched)" class="error-message">
+          Password is required.
+        </div>
+      </div>
+
+      <div class="input_box">
+        <label for="confirm-password">Confirm Password</label>
+        <input type="password" id="confirm-password" placeholder="Confirm Password" name="confirmPassword" ngModel required />
+        <div *ngIf="signupform.controls['confirmPassword']?.invalid && (signupform.controls['confirmPassword']?.dirty || signupform.controls['confirmPassword']?.touched)" class="error-message">
+          Confirm Password is required.
+        </div>
+      </div>
+
+      <div class="input_box">
+        <label for="phone">Phone Number</label>
+        <input type="tel" id="phone" placeholder="Enter phone number" name="phone" ngModel required pattern="[0-9]{10}" />
+        <div *ngIf="signupform.controls['phone']?.invalid && (signupform.controls['phone']?.dirty || signupform.controls['phone']?.touched)" class="error-message">
+          Phone number of 10 digits required.
+        </div>
+      </div>
+
+      <div class="input_box">
+        <label for="dob">Birth Date</label>
+        <input type="date" id="dob" placeholder="Enter birth date" name="dob" ngModel required />
+        <div *ngIf="signupform.controls['dob']?.invalid && (signupform.controls['dob']?.dirty || signupform.controls['dob']?.touched)" class="error-message">
+          Birth date is required.
+        </div>
+      </div>
+
+      <div class="gender-box">
+        <h3>Gender</h3>
+        <div class="gender-option">
+          <div class="gender">
+            <input type="radio" id="check-male" name="gender" ngModel value="male" required />
+            <label for="check-male">Male</label>
+          </div>
+          <div class="gender">
+            <input type="radio" id="check-female" name="gender" ngModel value="female" required />
+            <label for="check-female">Female</label>
+          </div>
+          <div class="gender">
+            <input type="radio" id="check-other" name="gender" ngModel value="not-to-say" required />
+            <label for="check-other">Prefer not to say</label>
+          </div>
+        </div>
+      </div>
+
+      <button type="submit" [disabled]="signupform.invalid">Submit</button>
+    </form>
+    <p class="signin">Already have an account? <a (click)="toggleVisibility()">Sign in</a></p>
+  </div>
+</div>

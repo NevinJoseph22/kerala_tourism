@@ -1,0 +1,35 @@
+<div class="body">
+
+  <div class="login_form">
+    <form [formGroup]="loginform" (ngSubmit)="onSubmit()">
+      <h3>Log In</h3>
+      <div class="input_box">
+        <label for="email">Email</label>
+        <input type="email" id="email" placeholder="Enter email address" formControlName="email" [class.error-border]="loginform.controls['email'].invalid && (loginform.controls['email'].dirty || loginform.controls['email'].touched)">
+        <div *ngIf="loginform.controls['email'].invalid && (loginform.controls['email'].dirty || loginform.controls['email'].touched)">
+          <div *ngIf="loginform.controls['email'].hasError('required')" class="error-message">
+            Email is required.
+          </div>
+          <div *ngIf="loginform.controls['email'].hasError('email')" class="error-message">
+            Invalid email format.
+          </div>
+        </div>
+      </div>
+      <div class="input_box">
+        <label for="password">Password</label>
+        <input type="password" id="password" placeholder="Enter your password" formControlName="password" [class.error-border]="loginform.controls['password'].invalid && (loginform.controls['password'].dirty || loginform.controls['password'].touched)">
+        <div *ngIf="loginform.controls['password'].invalid && (loginform.controls['password'].dirty || loginform.controls['password'].touched)">
+          <div *ngIf="loginform.controls['password'].hasError('required')" class="error-message">
+            Password is required.
+          </div>
+          <div *ngIf="loginform.controls['password'].hasError('minlength')" class="error-message">
+            Password must be at least 4 characters long.
+          </div>
+        </div>
+      </div>
+      <button type="submit" [disabled]="loginform.invalid">Log In</button>
+    </form>
+    <p class="sign_up">Don't have an account? <a (click)="toggleVisibility()">Sign up</a></p>
+  </div>
+</div>
+
