@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Output, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
 import { NgIf } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -16,7 +17,7 @@ export class LoginComponent implements OnInit {
 
   isHidden: boolean = true;
 
-  constructor(private fb: FormBuilder) {}
+  constructor(private fb: FormBuilder, private router: Router) {}
 
   ngOnInit(): void {
     this.loginform = this.fb.group({
@@ -28,7 +29,10 @@ export class LoginComponent implements OnInit {
   onSubmit() {
     if (this.loginform.valid) {
       console.log('Login form submitted:', this.loginform.value);
-      // Additional login logic here
+      // Perform login logic here (e.g., authentication)
+
+      // Redirect to home page upon successful login
+      this.router.navigate(['/']);
     } else {
       console.error('Login form is invalid.');
     }

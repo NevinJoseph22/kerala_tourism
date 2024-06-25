@@ -1,58 +1,43 @@
 <app-home-carousel></app-home-carousel>
-<section class="destination-page__section-main">
-  <div class="destination-main">
-    <!-- Map Background -->
-    <div class="destination-main__bg">
-      <img
-        src="https://res.cloudinary.com/rainforest-cruises/images/c_fill,g_auto/f_auto,q_auto/v1660061309/Tiger-Sketch/Tiger-Sketch.png"
-        alt=""
-        style="width: 95%; margin-left: 20px"
-      />
-    </div>
-
+<section class="home_section-main">
+  <div class="home_intro">
     <!-- Intro -->
-    <div class="destination-main__intro">
-      <div class="destination-main__intro__description">
-        <h2 class="destination-main__intro__description__title" id="intro">
-          Discover Kerala: God's Own Country
-        </h2>
-        <div class="destination-main__intro__description__text">
-          <p>
-            Welcome to Kerala, a paradise in southwestern India known as "God's
-            Own Country." Here, nature, culture, and adventure blend seamlessly
-            to create a truly breathtaking destination. Cruise along the serene
-            backwaters of Alleppey and Kumarakom on traditional houseboats,
-            relax on the pristine beaches of Kovalam and Varkala, and escape to
-            the cool, misty hill stations of Munnar and Wayanad. Each of these
-            experiences offers a unique glimpse into Kerala's picturesque
-            landscapes.
-          </p>
-          <p>
-            Kerala's vibrant cultural heritage is another highlight. Discover
-            traditional dance forms like Kathakali, partake in colorful temple
-            festivals, and savor the rich flavors of authentic Kerala cuisine.
-            For wildlife enthusiasts, thrilling safaris in Periyar Wildlife
-            Sanctuary reveal the diverse flora and fauna of the Western Ghats,
-            including elephants, tigers, and a myriad of bird species. These
-            cultural and natural experiences showcase the region's deep-rooted
-            traditions and stunning biodiversity.
-          </p>
-          <p>
-            Rejuvenation is at the heart of a visit to Kerala. Renowned for its
-            Ayurvedic treatments and therapies, Kerala offers numerous wellness
-            retreats where you can indulge in holistic healing amidst serene
-            surroundings. Whether you're seeking relaxation, adventure, or
-            cultural enrichment, Kerala promises unforgettable memories and
-            experiences for every traveler.
-          </p>
-        </div>
+    <div class="home_intro_text text-light" style="--bs-text-opacity: .65;">
+      <h2 class="home_intro_description_title" id="intro">
+        Discover Kerala: God's Own Country
+      </h2>
+      <div class="home_intro_description_text">
+        <p>
+          Welcome to Kerala, a paradise in southwestern India known as "God's
+          Own Country." Here, nature, culture, and adventure blend seamlessly
+          to create a truly breathtaking destination. Cruise along the serene
+          backwaters of Alleppey and Kumarakom on traditional houseboats,
+          relax on the pristine beaches of Kovalam and Varkala, and escape to
+          the cool, misty hill stations of Munnar and Wayanad. Each of these
+          experiences offers a unique glimpse into Kerala's picturesque
+          landscapes.
+        </p>
+        <p>
+          Kerala's vibrant cultural heritage is another highlight. Discover
+          traditional dance forms like Kathakali, partake in colorful temple
+          festivals, and savor the rich flavors of authentic Kerala cuisine.
+          For wildlife enthusiasts, thrilling safaris in Periyar Wildlife
+          Sanctuary reveal the diverse flora and fauna of the Western Ghats,
+          including elephants, tigers, and a myriad of bird species. These
+          cultural and natural experiences showcase the region's deep-rooted
+          traditions and stunning biodiversity.
+        </p>
+        <p>
+          Rejuvenation is at the heart of a visit to Kerala. Renowned for its
+          Ayurvedic treatments and therapies, Kerala offers numerous wellness
+          retreats where you can indulge in holistic healing amidst serene
+          surroundings. Whether you're seeking relaxation, adventure, or
+          cultural enrichment, Kerala promises unforgettable memories and
+          experiences for every traveler.
+        </p>
       </div>
     </div>
   </div>
 </section>
 
-<h2 class="sub-divider destination-main__experiences-title">
-  Kerala TOP Destinations
-</h2>
-
-<app-card [data]="topdestination"> </app-card>
+<app-carousel [items]="carouselItems"></app-carousel>

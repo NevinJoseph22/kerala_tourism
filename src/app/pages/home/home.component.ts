@@ -1,32 +1,70 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CardComponent } from "../../components/card/card.component";
 import { CarouselComponent } from "../../components/carousel/carousel.component";
-import { HomeCarouselComponent } from "../../components/home-carousel/home-carousel.component";
-
-interface District {
-  id: number;
-  title: string;
-  description: string;
-  imageUrl: string;
-}
+import { HomeCarouselComponent } from "../../home-carousel/home-carousel.component";
 
 @Component({
-    selector: 'app-home',
-    standalone: true,
-    templateUrl: './home.component.html',
-    styleUrl: './home.component.scss',
-    imports: [CardComponent, CarouselComponent, HomeCarouselComponent]
+  selector: 'app-home',
+  standalone: true,
+  templateUrl: './home.component.html',
+  styleUrls: ['./home.component.scss'],
+  imports: [CardComponent, CarouselComponent, HomeCarouselComponent],
 })
-export class HomeComponent {
+export class HomeComponent implements OnInit {
+  carouselItems = [
+    {
+      image:
+        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtoWmAl5YG_tgPKfjQ-1_NqLmKVnF42vLOgA&s',
+      name: 'Backwaters',
+    },
+    {
+      image:
+        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUYYq-cmuYWUbDEIdtLVQzqf5fQ3Yq7t5KbA&s',
+      name: 'Theyyam',
+    },
+    {
+      image:
+        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtOSPMaMQshjjSXNNJkcaOdAjrB3ZTC4mwXw&s',
+      name: 'Kathakali',
+    },
+    {
+      image:
+        'https://t4.ftcdn.net/jpg/05/84/31/57/360_F_584315730_hlgzu4Lzr8OtQgU0QerDDSroKtFqbRCf.jpg',
+      name: 'Houseboat',
+    },
+    {
+      image:
+        'https://qph.cf2.quoracdn.net/main-qimg-980d49c444f55fa23a8db0fdf887fcfd-pjlq',
+      name: 'Thrissur Pooram',
+    },
+    {
+      image:
+        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTbsu0NvlkWCoFLo9b_FVuV8q_MLFPN4ikfQ&s',
+      name: 'Munnar',
+    },
+    {
+      image:
+        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSiNEhUZ54So5wbVCbeoPS4sDCAoa_wnzqR5Q&s',
+      name: 'Kerala Beaches',
+    },
+    {
+      image:
+        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZa6nMitFwTXvzD_KJUFHT7igu6iotF51ogA&s',
+      name: 'Tea Plantations',
+    },
+    {
+      image:
+        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_93CRdw_8yj9wTh0qQfKpI60imddfCrRxxw&s',
+      name: 'Chinese Fishing Nets',
+    },
+    {
+      image:
+        'https://www.tripsavvy.com/thmb/L5MXBAbFbwH0QnBlq47ILG6jyUY=/3008x2000/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-141296615-aafce3a8534c45aba8afd312fa155cea.jpg',
+      name: 'Waterfalls',
+    },
+  ];
 
-  topdestination: District[] = [
-  { id: 1, title: 'Munnar', description: '', imageUrl: 'https://www.alleppeyhouseboatclub.com/wp-content/uploads/2017/08/munnar_Image-by-Joseph-Saxan-Pulikkottil-Rappai-from-Pixabay-819x546.jpg' },
-  { id: 2, title: 'Alleppey', description: '', imageUrl: 'https://miro.medium.com/v2/resize:fit:1400/1*O40cCSsckUi6YfxBFU2pXg.png' },
-  { id: 3, title: 'Kovalam', description: '', imageUrl: 'https://img.onmanorama.com/content/dam/mm/en/travel/kerala/images/2023/6/24/kovalam.jpg' },
-  { id: 4, title: 'athirapally waterfalls', description: '', imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsbH_e-x2OEPki31qHL84dHQmlb3ahniTsSg&s' },
-  { id: 5, title: 'periyar tiger reserve', description: '', imageUrl: 'https://res.cloudinary.com/rainforest-cruises/images/c_fill,g_auto/f_auto,q_auto/v1660754363/Sundarbans/Sundarbans.jpg' },
-  { id: 6, title: 'nelliyampathy', description: '', imageUrl: 'https://img.onmanorama.com/content/dam/mm/en/travel/getting-about-kerala/palakkad/images/2018/6/2/anamada7.jpg.transform/576x300/image.jpg' },
-  { id: 7, title: 'periyar tiger reserve', description: '', imageUrl: 'https://res.cloudinary.com/rainforest-cruises/images/c_fill,g_auto/f_auto,q_auto/v1660754363/Sundarbans/Sundarbans.jpg' },
-
-  ]
+  ngOnInit() {
+    console.log('HomeComponent initialized');
+  }
 }

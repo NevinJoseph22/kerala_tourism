@@ -52,22 +52,14 @@
         </div>
       </div>
 
-      <div class="gender-box">
-        <h3>Gender</h3>
-        <div class="gender-option">
-          <div class="gender">
-            <input type="radio" id="check-male" name="gender" ngModel value="male" required />
-            <label for="check-male">Male</label>
-          </div>
-          <div class="gender">
-            <input type="radio" id="check-female" name="gender" ngModel value="female" required />
-            <label for="check-female">Female</label>
-          </div>
-          <div class="gender">
-            <input type="radio" id="check-other" name="gender" ngModel value="not-to-say" required />
-            <label for="check-other">Prefer not to say</label>
-          </div>
-        </div>
+      <div class="input_box gender-box">
+        <label for="gender">Gender</label><br>
+        <input type="radio" id="male" name="gender" value="male" ngModel required />
+        <label for="male">Male</label>
+        <input type="radio" id="female" name="gender" value="female" ngModel required />
+        <label for="female">Female</label>
+        <input type="radio" id="others" name="gender" value="others" ngModel required />
+        <label for="others">Others</label>
       </div>
 
       <button type="submit" [disabled]="signupform.invalid">Submit</button>

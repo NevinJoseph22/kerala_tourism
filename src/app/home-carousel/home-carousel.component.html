@@ -1,6 +1,6 @@
 <div id="carouselExample" class="carousel slide">
   <div class="carousel-inner">
-    <div *ngFor="let item of carouselItems; let i = index" [class.active]="i === 0" class="carousel-item">
+    <div *ngFor="let item of homecarouselItems; let i = index" [class.active]="i === 0" class="carousel-item">
       <img [src]="item.image.desktop" class="d-block w-100" [alt]="item.alt">
     </div>
   </div>

@@ -6,10 +6,10 @@ import { Component, OnInit } from '@angular/core';
   standalone: true,
   imports: [NgFor],
   templateUrl: './home-carousel.component.html',
-  styleUrl: './home-carousel.component.scss'
+  styleUrls: ['./home-carousel.component.scss']
 })
 export class HomeCarouselComponent implements OnInit {
-carouselItems = [
+  homecarouselItems = [
     {
       image: {
         mobile: 'https://www.keralatourism.org/images/banner/mobile/ashtamudi_lake_-768-768.jpg',
@@ -66,8 +66,11 @@ carouselItems = [
     }
   ];
 
-  constructor() { }
+  constructor() {
+        console.log('HomeCarouselComponent initialized');
+   }
 
-  ngOnInit(): void { }
-
+  ngOnInit(): void {
+        console.log('HomeCarouselComponent ngOnInit');
+   }
 }

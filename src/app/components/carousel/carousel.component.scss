@@ -1,4 +1,46 @@
-.container
-{
-  margin-top: 70px;
+.carousel-wrapper {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.carousel-content {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  width: 100%;
+}
+
+.carousel-item {
+  min-width: 25%;
+  box-sizing: border-box;
+}
+
+.scroll-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  border: none;
+  color: white;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 1;
+
+  &.prev {
+    left: 0;
+  }
+
+  &.next {
+    right: 0;
+  }
+}
+
+.card {
+  margin: 10px;
+
+  .card-img-top {
+    width: 100%;
+    height: auto;
+  }
 }
